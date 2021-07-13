@@ -1,0 +1,12 @@
+<div class="relative bg-gray-100">
+  <div class="relative flex flex-col items-center justify-center min-h-screen">
+    <img src="/assets/logo.svg" width='50px'/>
+    <div class="w-full max-w-4xl">
+        <app-welcome *ngIf='!user.id; else userLoggedIn'></app-welcome>
+        <ng-template #userLoggedIn><app-tasks  [user]="user"></app-tasks></ng-template>
+        <app-footer></app-footer>
+    </div>
+  </div>
+  <app-loading></app-loading>
+  <app-notification></app-notification>
+</div>
